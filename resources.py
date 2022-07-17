@@ -1,9 +1,8 @@
 import os
 import platform
-# Resources for sys_info
 
 rel = platform.release()
-
+sys = platform.system()
 
 def windows():
     pass
@@ -13,8 +12,6 @@ def mac():
 
     ver, _, _ = platform.mac_ver()
     ver = float('.'.join(ver.split('.')[:2]))
-
-
 
     rel_name = ""
 
@@ -49,9 +46,15 @@ def mac():
         ver_name = "(Name not in database)"
         rel_name = "-"
 
-    ver_name = "(" + ver_name + ")"
+    ver = ver + " (" + ver_name + ")"
 
     sys = f"{sys} / {rel_name}"
+    return ver
 
 def linux():
     pass
+
+
+
+# print("Wrong script :)")
+# exec(open("sys_info.py").read())

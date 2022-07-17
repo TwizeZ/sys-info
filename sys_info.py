@@ -3,15 +3,11 @@ import platform
 import resources
 
 osn = os.name
-
-sys = platform.system()
+name = platform.node()
 
 rel = platform.release()
 
-pl_ver = platform.version()
-
-
-ver = "TEST"
+ver = ""
 
 ver_name = ""
 
@@ -23,13 +19,13 @@ def main():
 	print()
 
 	print(f"OS: {osn}")
+	print(f"Comupter name: {name}")
 
 	print()
 
-	print(f"System: {sys}")
+	print(f"System: {resources.sys}")
 	print(f"Release: {rel}")
-	print(f"Version: {ver} {ver_name}")
-	print(f"Full version: {pl_ver}")
+	print(f"Version: {ver}")
 
 	print()
 
@@ -41,7 +37,8 @@ def main():
 if __name__ in "__main__":
 	
 	if osn == "Darwin":
-		resources.mac()
+		var = resources.mac()
+		print(var)
 	elif osn == "Windows":
 		resources.windows()
 	elif osn == "Linux":
